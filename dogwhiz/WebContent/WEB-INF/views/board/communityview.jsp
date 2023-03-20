@@ -38,7 +38,7 @@
                         <a href="javascript:history.back()" title="이전"><i class="fa-solid fa-chevron-left"></i></a>
                     </div>
                     <h2>
-                        	공지사항
+                        	커뮤니티
                     </h2>
                     <div class="sub_top_right">
                         <a href="writepage">글쓰기</a>
@@ -47,10 +47,10 @@
 
 				<div class="board_list">
 					<div id="content">
-						<h2>${annoucement.important ? '[필독] ' : ''} [${annoucement.category}] ${annoucement.title}</h2>
-						<p>글쓴이: ${annoucement.writer} | 작성날짜: ${annoucement.createdAt.toLocalDate()} ${annoucement.createdAt.toLocalTime()} | 조회수: ${annoucement.viewCount + 1} | 추천수: ${annoucement.likeCount}</p>
+						<h2>[${community.category}] ${community.title}</h2>
+						<p>글쓴이: ${community.writer} | 작성날짜: ${community.createdAt.toLocalDate()} ${community.createdAt.toLocalTime()} | 조회수: ${community.viewCount + 1} | 추천수: ${community.likeCount}</p>
 						<hr>
-						<p>${annoucement.content}</p>
+						<p>${community.content}</p>
 					</div>
 				</div>
             </div>

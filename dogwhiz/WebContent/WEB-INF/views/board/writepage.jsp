@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="./css/writepage.css?after">
 
     <!-- js -->
-    <script src="./js/writepage.js" defer></script>
+    <script src="./js/writepage.js?after" defer></script>
 
 </head>
 <body>
@@ -42,7 +42,7 @@
 				        <input type="checkbox" id="important-checkbox" name="important" value="true">
 				        <label for="important-checkbox">필독</label>
 				    </div>         
-	                <div class="subCategory" style="display: none;">
+	                <div class="subCategory" style="display: none; margin-left: 10px;">
 	                    <select name="subCategory" id="subCategory">
 	                        <option value="일상">일상</option>
 	                        <option value="소식">소식</option>

@@ -100,8 +100,13 @@ button[type=submit]:hover {
 	padding-left: 30px;
 }
 
+.subCategory {
+	margin-left: 10px;
+}
+
 .btns {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+

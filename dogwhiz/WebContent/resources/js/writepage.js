@@ -114,7 +114,7 @@ toolbar: {
 	]
 	}).then(editor => {
 		window.editor = editor;
-		console.log('Editor was initialized 되었어');
+		console.log('Editor was initialized');
 	}).catch(error => {
 		console.error(error);
 });
@@ -185,7 +185,6 @@ const importantDiv = document.querySelector('.important');
 const subCategoryDiv = document.querySelector('.subCategory');
 
 function chageList() {
-    console.log('호출');
     if (categorySelect.value === '공지') {
         importantDiv.style.display = 'block';
         subCategoryDiv.style.display = 'none';
