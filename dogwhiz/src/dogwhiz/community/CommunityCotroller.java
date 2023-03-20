@@ -23,7 +23,7 @@ public class CommunityCotroller {
 	private CommunityService service;
 	
 	@GetMapping("/community")
-	public String viewAnnoucement(Model model, @RequestParam(value = "page", defaultValue = "1") int page) {
+	public String viewCommunity(Model model, @RequestParam(value = "page", defaultValue = "1") int page) {
 		// 한 페이지에 보여줄 게시글 수
 		int size = 10;
 		

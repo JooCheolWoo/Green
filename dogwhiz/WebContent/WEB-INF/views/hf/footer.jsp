@@ -67,7 +67,7 @@
 	             <div class="bottombar">
 	                 <div>
 	                     <div>
-	                         <a href="">
+	                         <a href="community">
 	                             <i class="fa-solid fa-comments" alt="커뮤니티" title="커뮤니티"></i>
 	                         </a>
 	                     </div>

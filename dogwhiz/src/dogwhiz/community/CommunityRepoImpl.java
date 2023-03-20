@@ -15,7 +15,7 @@ import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
-@Repository("AnnoucementMySQL")
+@Repository("CommunityMySQL")
 public class CommunityRepoImpl implements CommunityRepository {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;

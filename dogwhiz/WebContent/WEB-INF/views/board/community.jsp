@@ -33,7 +33,7 @@
                         <a href="javascript:history.back()" title="이전"><i class="fa-solid fa-chevron-left"></i></a>
                     </div>
                     <h2>
-                        <a href="announcement">커뮤니티</a>
+                        <a href="community">커뮤니티</a>
                     </h2>
                     <div class="sub_top_right">
                         <a href="writepage">글쓰기</a>
@@ -49,44 +49,44 @@
                 </div>
 				 <div class="board_list">
 					<c:set var="now" value="<%=java.time.LocalDateTime.now()%>" />
-					<c:forEach items="${coummunity}" var="annoucement" begin="${(page) * 10}" end="${(page) * 10 + 9}">
+					<c:forEach items="${community}" var="community" begin="${(page) * 10}" end="${(page) * 10 + 9}">
 						<div class="post_div">
 							<div class="post_left">
 								<div class="post_top">
-									<span>[${coummunity.subCategory}]</span>
+									<span>[${community.subCategory}]</span>
 									<span>
 										<c:choose>
-							                <c:when test="${fn:length(coummunity.title) > 15}">
-							                    <a href="/dogwhiz/coummunityview?no=${coummunity.no}">${fn:substring(coummunity.title, 0, 15)}...</a>
+							                <c:when test="${fn:length(community.title) > 15}">
+							                    <a href="/dogwhiz/communityview?no=${community.no}">${fn:substring(community.title, 0, 15)}...</a>
 							                </c:when>
 							                <c:otherwise>
-							                    <a href="/dogwhiz/coummunityview?no=${coummunity.no}">${coummunity.title}</a>
+							                    <a href="/dogwhiz/communityview?no=${community.no}">${community.title}</a>
 							                </c:otherwise>
 						            	</c:choose>
 									</span>
 								</div>
 								<div class="post_middle">
-									<span class="nickname">${coummunity.writer}</span>
+									<span class="nickname">${community.writer}</span>
 									<span>
 						            <c:choose>
-						                <c:when test="${coummunity.createdAt.toLocalDate() == now.toLocalDate()}">
-						                    <span class="createdAt" style="font-size: 14px">${coummunity.createdAt.toLocalTime()}</span>
+						                <c:when test="${community.createdAt.toLocalDate() == now.toLocalDate()}">
+						                    <span class="createdAt" style="font-size: 14px">${community.createdAt.toLocalTime()}</span>
 						                </c:when>
 						                <c:otherwise>
-						                    <span class="createdAt" style="font-size: 14px">${coummunity.createdAt.toLocalDate()} ${coummunity.createdAt.toLocalTime()}</span>
+						                    <span class="createdAt" style="font-size: 14px">${community.createdAt.toLocalDate()} ${community.createdAt.toLocalTime()}</span>
 						                </c:otherwise>
 						            </c:choose>										
 									</span>
 								</div>
 								<div class="post_bottom">
-									<i class="fa-regular fa-heart"></i> <span>${coummunity.likeCount}</span>
-									<i class="fa-regular fa-comment-dots"></i> <span>${coummunity.likeCount}</span>
-									<i class="fa-regular fa-eye"></i> <span>${coummunity.viewCount}</span>									
+									<i class="fa-regular fa-heart"></i> <span>${community.likeCount}</span>
+									<i class="fa-regular fa-comment-dots"></i> <span>${community.likeCount}</span>
+									<i class="fa-regular fa-eye"></i> <span>${community.viewCount}</span>									
 								</div>
 							</div>
 							<div class="post_image">
-								<c:if test="${fn:contains(coummunity.content, '<img')}">
-								  <c:set var="firstImage" value="${fn:substringAfter(coummunity.content, '<img')}"/>
+								<c:if test="${fn:contains(community.content, '<img')}">
+								  <c:set var="firstImage" value="${fn:substringAfter(community.content, '<img')}"/>
 								  <c:set var="firstImage" value="${fn:substringBefore(firstImage, '>')}"/>
 								  <img ${firstImage}>
 								</c:if>			

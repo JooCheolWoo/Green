@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="./css/writepage.css?after">
 
     <!-- js -->
-    <script src="./js/writepage.js?after" defer></script>
+    <script src="./js/writepage.js?date=1339" defer></script>
 
 </head>
 <body>

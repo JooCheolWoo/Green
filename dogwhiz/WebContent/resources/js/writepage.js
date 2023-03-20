@@ -129,19 +129,7 @@ function submitForm() {
 	        url = "./announcement/add";
 	        form.setAttribute("modelAttribute", "announcement");
 	        break;
-	    case "일상":
-	        url = "./community/add";
-	        form.setAttribute("modelAttribute", "community");
-	        break;
-	    case "소식":
-	        url = "./community/add";
-	        form.setAttribute("modelAttribute", "community");
-	        break;
-	    case "자랑":
-	        url = "./community/add";
-	        form.setAttribute("modelAttribute", "community");
-	        break;
-	    case "질문":
+	    case "커뮤니티":
 	        url = "./community/add";
 	        form.setAttribute("modelAttribute", "community");
 	        break;
