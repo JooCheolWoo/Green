@@ -15,7 +15,7 @@
 	         <div class="ft_infobox">
 	             <ul class="ft_menu">
 	                 <li>
-	                     <a href="#">회사소개</a>
+	                     <a href="#">팀원소개</a>
 	                 </li>
 	                 <li>
 	                     <a href="#">이용약관</a>
@@ -46,52 +46,52 @@
 	         <div class="bottombarlist">
 	             <div class="bottombar">
 	                 <div>
-	                     <div>
-	                         <a href="main">
+                         <a href="main">
+		                     <div>
 	                             <i class="fa-solid fa-house" alt="홈아이콘" title="홈아이콘"></i>
-	                         </a>
-	                     </div>
-	                     <span>홈</span>
+		                     </div>
+		                     <span>홈</span>
+                         </a>
 	                 </div>
 	             </div>
 	             <div class="bottombar">
 	                 <div>
-	                     <div>
-	                         <a href="">
+                         <a href="">
+		                     <div>
 	                             <i class="fa-solid fa-person" alt="마이페이지아이콘" title="마이페이지아이콘"></i>
-	                         </a>
-	                     </div>
-	                     <span>마이페이지</span>
+		                     </div>
+		                     <span>마이페이지</span>
+                         </a>
 	                 </div>
 	             </div>
 	             <div class="bottombar">
 	                 <div>
-	                     <div>
-	                         <a href="community">
-	                             <i class="fa-solid fa-comments" alt="커뮤니티" title="커뮤니티"></i>
-	                         </a>
-	                     </div>
-	                     <span>커뮤니티</span>
-	                 </div>
-	             </div>
-	             <div class="bottombar">
-	                 <div>
-	                     <div>
-	                         <a href="./myPet.html">
+                         <a href="./myPet.html">
+		                     <div>
 	                             <i class="fa-solid fa-paw" alt="내펫관리아이콘" title="내펫관리아이콘"></i>
-	                         </a>
-	                     </div>
-	                     <span>내펫관리</span>
+		                     </div>
+		                     <span>내펫관리</span>
+                         </a>
 	                 </div>
 	             </div>
 	             <div class="bottombar">
 	                 <div>
-	                     <div>
-	                         <a href="">
+                         <a href="#">
+		                     <div>
+	                             <i class="fa-solid fa-comments" alt="채팅" title="채팅"></i>
+		                     </div>
+		                     <span>대화방</span>
+                         </a>
+	                 </div>
+	             </div>
+	             <div class="bottombar">
+	                 <div>
+                         <a href="">
+		                     <div>
 	                             <i class="fa-solid fa-bars" alt="카테고리아이콘" title="카테고리아이콘"></i>
-	                         </a>
-	                     </div>
-	                     <span>카테고리</span>
+		                     </div>
+		                     <span>카테고리</span>
+                         </a>
 	                 </div>
 	             </div>
 	         </div>

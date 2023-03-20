@@ -42,14 +42,22 @@
 				        <input type="checkbox" id="important-checkbox" name="important" value="true">
 				        <label for="important-checkbox">필독</label>
 				    </div>         
-	                <div class="subCategory" style="display: none; margin-left: 10px;">
-	                    <select name="subCategory" id="subCategory">
+	                <div class="subCategoryCommunity" style="display: none; margin-left: 10px;">
+	                    <select name="subCategoryC" id="subCategoryCommunity">
 	                        <option value="일상">일상</option>
 	                        <option value="소식">소식</option>
 	                        <option value="자랑">자랑</option>
 	                        <option value="질문">질문</option>
 	                    </select>
-	                </div>				             
+	                </div>			
+	                <div class="subCategoryDictionary" style="display: none; margin-left: 10px;">
+	                    <select name="subCategoryD" id="subCategoryDictionary">
+	                        <option value="견종">견종</option>
+	                        <option value="훈련">훈련</option>
+	                        <option value="자랑">건강</option>
+	                        <option value="기타">기타</option>
+	                    </select>
+	                </div>		                	             
                 </div>
                 <div class="title">
                     <label for="title">제목</label>

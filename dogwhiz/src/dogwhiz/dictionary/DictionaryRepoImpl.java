@@ -1,4 +1,4 @@
-package dogwhiz.community;
+package dogwhiz.dictionary;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -15,18 +15,18 @@ import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
-@Repository("CommunityMySQL")
-public class CommunityRepoImpl implements CommunityRepository {
+@Repository("DictionaryMySQL")
+public class DictionaryRepoImpl implements DictionaryRepository {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	
-	private RowMapper<CommunityBoard> rowMapper = new RowMapper<CommunityBoard>() {
+	private RowMapper<DictionaryBoard> rowMapper = new RowMapper<DictionaryBoard>() {
 		@Override
-		public CommunityBoard mapRow(ResultSet rs, int rowNum) throws SQLException {
+		public DictionaryBoard mapRow(ResultSet rs, int rowNum) throws SQLException {
 			int no = rs.getInt("no");
 			String category = rs.getString("category");
 			String title = rs.getString("title");
-			String subCategoryC = rs.getString("sub_category");
+			String subCategoryD = rs.getString("sub_category");
 			String content = rs.getString("content");
 			String writer = rs.getString("writer");
 			LocalDateTime createdAt = rs.getTimestamp("created_at").toLocalDateTime();
@@ -35,11 +35,11 @@ public class CommunityRepoImpl implements CommunityRepository {
 			int likeCount = rs.getInt("like_count");
 			int commentCount = rs.getInt("comment_count");
 			
-			CommunityBoard board = new CommunityBoard();
+			DictionaryBoard board = new DictionaryBoard();
 			board.setNo(no);
 			board.setCategory(category);
 			board.setTitle(title);
-			board.setSubCategoryC(subCategoryC);
+			board.setSubCategoryD(subCategoryD);
 			board.setContent(content);
 			board.setWriter(writer);
 			board.setCreatedAt(createdAt);
@@ -53,16 +53,16 @@ public class CommunityRepoImpl implements CommunityRepository {
 	
 
 	@Override
-	public List<CommunityBoard> getAllcommunityDesc() {
-		String query = "SELECT * FROM community ORDER BY no DESC";
+	public List<DictionaryBoard> getAllDictionaryDesc() {
+		String query = "SELECT * FROM dictionary ORDER BY no DESC";
 		return jdbcTemplate.query(query, rowMapper);
 	}
 
 	@SuppressWarnings("deprecation")
 	@Override
-	public CommunityBoard getCommunitywithNo(int no) {
-		String query = "SELECT * FROM community WHERE no = ?";
-		List<CommunityBoard> list = jdbcTemplate.query(query, new Object[]{no} , rowMapper);
+	public DictionaryBoard getDictionarywithNo(int no) {
+		String query = "SELECT * FROM dictionary WHERE no = ?";
+		List<DictionaryBoard> list = jdbcTemplate.query(query, new Object[]{no} , rowMapper);
 		if (list.isEmpty()) {
 			return null;
 		} else {
@@ -72,47 +72,47 @@ public class CommunityRepoImpl implements CommunityRepository {
 
 	@SuppressWarnings("deprecation")
 	@Override
-	public List<CommunityBoard> getCommunityWithTitle(String title) {
-		String query = "SELECT * FROM community WHERE title LIKE %?% ORDER BY no DESC";
+	public List<DictionaryBoard> getDictionaryWithTitle(String title) {
+		String query = "SELECT * FROM dictionary WHERE title LIKE %?% ORDER BY no DESC";
 		return jdbcTemplate.query(query, new Object[]{title} , rowMapper);
 	}
 	
 	@Override
-	public List<CommunityBoard> getCommunityWithSubCategory(String subCategory) {
-		String query = "SELECT * FROM community WHERE sub_category ? ORDER BY no DESC";
+	public List<DictionaryBoard> getDictionaryWithSubCategory(String subCategory) {
+		String query = "SELECT * FROM dictionary WHERE sub_category ? ORDER BY no DESC";
 		return jdbcTemplate.query(query, new Object[]{subCategory} , rowMapper);
 	}
 
 	@SuppressWarnings("deprecation")
 	@Override
-	public List<CommunityBoard> getCommunityBetweenNoDesc(int start, int end) {
-		String query = "SELECT * FROM community ORDER BY no DESC LIMIT ?, ?";
+	public List<DictionaryBoard> getDictionaryBetweenNoDesc(int start, int end) {
+		String query = "SELECT * FROM dictionary ORDER BY no DESC LIMIT ?, ?";
 		return jdbcTemplate.query(query, new Object[]{start, end} , rowMapper);
 	}
 
 	@Override
-	public int getCommunityCount() {
-		String query = "SELECT COUNT(*) FROM community";
+	public int getDictionaryCount() {
+		String query = "SELECT COUNT(*) FROM dictionary";
 		return jdbcTemplate.queryForObject(query, Integer.class);
 	}
 
 	@Override
-	public int getNewCommunitytNo() {
-		String query = "SELECT MAX(no) FROM community";
+	public int getNewDictionarytNo() {
+		String query = "SELECT MAX(no) FROM dictionary";
 		Integer maxPostNo = jdbcTemplate.queryForObject(query, Integer.class);
 		return (maxPostNo != null) ? maxPostNo : 1;
 	}
 
 	@Override
-	public int insertCommunity(CommunityBoard communityBoard) {
+	public int insertDictionary(DictionaryBoard dictionaryBoard) {
 	    KeyHolder keyHolder = new GeneratedKeyHolder();
 	    int affectedRows = jdbcTemplate.update(con -> {
-	        PreparedStatement ps = con.prepareStatement("INSERT INTO community (category, sub_category, title, content, writer) VALUES (?, ?, ?, ?, ?)", Statement.RETURN_GENERATED_KEYS);
-	        ps.setString(1, communityBoard.getCategory());
-	        ps.setString(2, communityBoard.getSubCategoryC());
-	        ps.setString(3, communityBoard.getTitle());
-	        ps.setString(4, communityBoard.getContent());
-	        ps.setString(5, communityBoard.getWriter());
+	        PreparedStatement ps = con.prepareStatement("INSERT INTO dictionary (category, sub_category, title, content, writer) VALUES (?, ?, ?, ?, ?)", Statement.RETURN_GENERATED_KEYS);
+	        ps.setString(1, dictionaryBoard.getCategory());
+	        ps.setString(2, dictionaryBoard.getSubCategoryD());
+	        ps.setString(3, dictionaryBoard.getTitle());
+	        ps.setString(4, dictionaryBoard.getContent());
+	        ps.setString(5, dictionaryBoard.getWriter());
 	        return ps;
 	    }, keyHolder);
 	    if (affectedRows == 0) {
@@ -122,27 +122,27 @@ public class CommunityRepoImpl implements CommunityRepository {
 	}
 
 	@Override
-	public int updateCommunitywithNo(int no, String subCategory, String title, String content) {
-		String query = "UPDATE community SET title = ?, sub_category = ?, content = ? WHERE no = ?";
+	public int updateDictionarywithNo(int no, String subCategory, String title, String content) {
+		String query = "UPDATE dictionary SET title = ?, sub_category = ?, content = ? WHERE no = ?";
 		LocalDateTime now = LocalDateTime.now();
 		return jdbcTemplate.update(query, subCategory, title, content, no);
 	}
 
 	@Override
-	public int deleteCommunitywithNo(int no) {
-		String query = "DELETE FROM community WHERE no = ?";
+	public int deleteDictionarywithNo(int no) {
+		String query = "DELETE FROM dictionary WHERE no = ?";
 		return jdbcTemplate.update(query, no);
 	}
 
     @Override
     public int addViewCount(int no) {
-        String query = "UPDATE community SET view_count = view_count + 1 WHERE no = ?";
+        String query = "UPDATE dictionary SET view_count = view_count + 1 WHERE no = ?";
         return jdbcTemplate.update(query, no);
     }
 
     @Override
     public int addLikeCount(int no) {
-        String query = "UPDATE community SET like_count = like_count + 1 WHERE no = ?";
+        String query = "UPDATE dictionary SET like_count = like_count + 1 WHERE no = ?";
         return jdbcTemplate.update(query, no);
     }
 }

@@ -170,18 +170,27 @@ function submitForm() {
 
 const categorySelect = document.getElementById('category');
 const importantDiv = document.querySelector('.important');
-const subCategoryDiv = document.querySelector('.subCategory');
+const subCategoryCommunityDiv = document.querySelector('.subCategoryCommunity');
+const subCategoryDictionaryDiv = document.querySelector('.subCategoryDictionary');
 
 function chageList() {
     if (categorySelect.value === '공지') {
         importantDiv.style.display = 'block';
-        subCategoryDiv.style.display = 'none';
+        subCategoryCommunityDiv.style.display = 'none';
+        subCategoryDictionaryDiv.style.disply = 'none';
     } else if (categorySelect.value == '커뮤니티') {
-        subCategoryDiv.style.display = 'block';
+        subCategoryCommunityDiv.style.display = 'block';
         importantDiv.style.display = 'none';
+        subCategoryDictionaryDiv.style.disply = 'none';
+    } else if (categorySelect.value == '개과사전') {
+    	subCategoryDictionaryDiv.style.display = 'block';
+        subCategoryCommunityDiv.style.display = 'none';
+        importantDiv.style.display = 'none';  
+        console.log('제발');  	
     } else {
-        subCategoryDiv.style.display = 'none';
+        subCategoryCommunityDiv.style.display = 'none';
         importantDiv.style.display = 'none';
+        subCategoryDictionaryDiv.style.disply = 'none';
     }    
 }
 

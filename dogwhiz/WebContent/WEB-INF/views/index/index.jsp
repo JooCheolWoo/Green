@@ -45,7 +45,7 @@
     <section class="mobile">
         <div class="pc_logo">
             <a href="./">
-                <img src="https://drive.google.com/uc?export=view&id=1UkuH_7JTlFDsM8yytKd2A2FJrzXIyhB9">
+                <img src="./images/logo/logo.png">
             </a>
         </div>
         <div class="container section">

@@ -24,7 +24,7 @@
 	         <!-- 로고 -->
 	         <div class="m_logo">
 	             <a href="main">
-	                 <img src="https://drive.google.com/uc?export=view&id=1UkuH_7JTlFDsM8yytKd2A2FJrzXIyhB9" height="45px">
+	                 <img src="./images/logo/logo.png" height="45px">
 	             </a>
 	         </div>
 	         <!-- 우측 메뉴 -->
@@ -38,8 +38,9 @@
 	         <div class="category_scroll">
 	             <ul>
 	                 <li><a href="announcement">공지사항</a></li>
-	                 <li><a href="#" class="map_diary">산책일기</a></li>
-	                 <li><a href="#">애견사전</a></li>
+	                 <li><a href="#" class="map_diary">산책커뮤니티</a></li>
+	                 <li><a href="community">커뮤니티</a>
+	                 <li><a href="dictionary">개과사전</a></li>
 	                 <li><a href="#">이벤트</a></li>
 	                 <li><a href="#">피드백</a></li>
 	             </ul>

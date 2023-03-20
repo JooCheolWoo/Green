@@ -3,24 +3,24 @@ package dogwhiz.dictionary;
 import dogwhiz.model.Board;
 
 public class DictionaryBoard extends Board {
-	private String subCategory;
+	private String subCategoryD;
 	
     public DictionaryBoard() {
         this.category = "개과사전";
         this.writer = "관리자";
     }
 	
-	public DictionaryBoard(String subCategory, String title, String content) {
+	public DictionaryBoard(String subCategoryD, String title, String content) {
 		super(title, content, "관리자");
 		this.category = "개과사전";
-		this.subCategory = subCategory;
+		this.subCategoryD = subCategoryD;
 	}
 
-	public String getSubCategory() {
-		return subCategory;
+	public String getSubCategoryD() {
+		return subCategoryD;
 	}
 
-	public void setSubCategory(String subCategory) {
-		this.subCategory = subCategory;
+	public void setSubCategoryD(String subCategoryD) {
+		this.subCategoryD = subCategoryD;
 	}
 }

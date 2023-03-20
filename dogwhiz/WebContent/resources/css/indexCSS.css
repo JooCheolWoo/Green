@@ -16,7 +16,7 @@ body {
     width: 100%;
     height: 965px;
     font-weight: 400;
-    background-image: url("https://drive.google.com/uc?export=view&id=1NV-vAeQJHC_a-ujRzKDEalKE55xHshc8");
+    background-image: url("../images/background/background.png");
     background-size: 1800px;
     background-repeat: no-repeat;
     background-position: 45% 20%;
@@ -124,19 +124,19 @@ body {
 }
 
 .card:nth-child(1) {
-    background-image: url("https://drive.google.com/uc?export=view&id=1O7gZ6BBITh3TKvY7YYf--laxX4F4Ni9f");
+    background-image: url("../images/container/bg01_01.png");
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 .card:nth-child(2) {
-    background-image: url("https://drive.google.com/uc?export=view&id=1iDdG8JqHL0TsycaQTNUUfoh03CTOBu6C");
+    background-image: url("../images/container/bg01_02.png");
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 .card:nth-child(3) {
-    background-image: url("https://drive.google.com/uc?export=view&id=1AxU_rIq-MnlXBzPlfK3YfLCNkJ7FS4fS");
+    background-image: url("../images/container/bg01_03.jpg");
     background-size: cover;
     background-repeat: no-repeat;
 }
