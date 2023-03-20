@@ -1,7 +1,7 @@
 # JooCheolWoo
 그린컴퓨터아카데미 프로젝트
 
-# Dogwhiz 2023.02.10 ~ (구현중)
+# Dogwhiz 2023.02.10 ~ (구현중) (팀 구성원의 이탈로 인하여 구현되지 못한 기능들이 많습니다.)
 ● 강아지 산책 Web (JavaScript / html / sql / css / jQuery / API / Spring / CkEditor / Github)
 - 애견인들의 산책경로 및 생활을 공유하는 커뮤니티
 - 사용자가 직접 지도에 경로를 표시하고 게시글로 공유
