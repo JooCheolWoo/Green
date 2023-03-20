@@ -5,24 +5,25 @@ import java.time.LocalDateTime;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
-public abstract class Board {
-    protected int no; // 글번호
-    protected String category; // 게시판 종류
-    @Size(min = 1, max = 255, message = "제목을 입력해 주세요.")
+public class Post {
+    private int no; // 글번호
+    private String category; // 게시판 종류
+    private String subCategory; // 게시판 부종류
+    @Size(min = 1, max = 50, message = "제목을 입력해 주세요.")
     @NotEmpty(message = "제목을 입력해 주세요.")
-    protected String title; // 글제목
+    private String title; // 글제목
     @NotEmpty(message = "내용을 입력해 주세요.")
-    protected String content; // 글내용
-    protected String writer; // 글쓴이
-    protected LocalDateTime createdAt; // 작성일
-    protected LocalDateTime updatedAt; // 수정일
-    protected int viewCount; // 조회수
-    protected int likeCount; // 추천수
-    protected int commentCount; // 댓글수
+    private String content; // 글내용
+    private String writer; // 글쓴이
+    private LocalDateTime createdAt; // 작성일
+    private LocalDateTime updatedAt; // 수정일
+    private int viewCount; // 조회수
+    private boolean important;
 
-    public Board() {}
+
+    public Post() {}
       
-	public Board(String title, String content, String writer) {
+	public Post(String title, String content, String writer) {
 		this.title = title;
 		this.content = content;
 		this.writer = writer;
@@ -42,6 +43,14 @@ public abstract class Board {
 
 	public void setCategory(String category) {
 		this.category = category;
+	}
+
+	public String getSubCategory() {
+		return subCategory;
+	}
+
+	public void setSubCategory(String subCategory) {
+		this.subCategory = subCategory;
 	}
 
 	public String getTitle() {
@@ -92,19 +101,12 @@ public abstract class Board {
 		this.viewCount = viewCount;
 	}
 
-	public int getLikeCount() {
-		return likeCount;
+
+	public boolean isImportant() {
+		return important;
 	}
 
-	public void setLikeCount(int likeCount) {
-		this.likeCount = likeCount;
-	}
-
-	public int getCommentCount() {
-		return commentCount;
-	}
-
-	public void setCommentCount(int commentCount) {
-		this.commentCount = commentCount;
+	public void setImportant(boolean important) {
+		this.important = important;
 	}
 }

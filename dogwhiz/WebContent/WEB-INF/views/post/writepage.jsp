@@ -28,11 +28,11 @@
     <jsp:include page="../hf/header.jsp"/>
     <div id="container">
         <div class="writearea">
-            <form:form id="post-form" modelAttribute="" method="post" action="">
+            <form:form id="post-form" modelAttribute="post" method="post" action="./post/add">
                 <div class="category">
                     <label for="category">말머리</label>
                     <select name="category" id="category">
-                        <option value="공지">공지</option>
+                        <option value="공지사항">공지</option>
                         <option value="커뮤니티">커뮤니티</option>
                         <option value="개과사전">개과사전</option>
                         <option value="이벤트">이벤트</option>
@@ -43,7 +43,7 @@
 				        <label for="important-checkbox">필독</label>
 				    </div>         
 	                <div class="subCategoryCommunity" style="display: none; margin-left: 10px;">
-	                    <select name="subCategoryC" id="subCategoryCommunity">
+	                    <select id="subCategoryCommunity">
 	                        <option value="일상">일상</option>
 	                        <option value="소식">소식</option>
 	                        <option value="자랑">자랑</option>
@@ -51,7 +51,7 @@
 	                    </select>
 	                </div>			
 	                <div class="subCategoryDictionary" style="display: none; margin-left: 10px;">
-	                    <select name="subCategoryD" id="subCategoryDictionary">
+	                    <select id="subCategoryDictionary">
 	                        <option value="견종">견종</option>
 	                        <option value="훈련">훈련</option>
 	                        <option value="자랑">건강</option>
@@ -63,10 +63,9 @@
                     <label for="title">제목</label>
                     <input type="text" id="title" name="title" required>
                 </div>
-                <div id="editor" style=" display: none;"></div>
-                <textarea id="content" name="content" style="display: none;"></textarea>
+                <textarea id="editor" name="content" style="display: none;"></textarea>
                 <div class="btns">
-                    <button type="submit" class="submitBtn" onclick="submitForm()">작성완료</button>
+                    <button type="submit" class="submitBtn">작성완료</button>
                     <button type="button" class="cancelBtn">작성취소</button>
                 </div>
             </form:form>

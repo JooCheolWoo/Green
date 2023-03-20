@@ -129,6 +129,7 @@
                         <sapn>공지사항</span>
                     </div>
                     <div class="announcement_list">
+                    <!--  
                     	<ul>
 						<c:forEach items="${annoucement}" var="annoucement">
 							<li>
@@ -147,6 +148,7 @@
 							</li>
 						</c:forEach>
 						</ul>
+						-->
                     </div>
                 </div>
                 <div class="main_walkrank">
