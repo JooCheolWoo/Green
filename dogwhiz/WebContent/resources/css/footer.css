@@ -1,0 +1,82 @@
+.footer {
+    margin-bottom: 100px;
+}
+
+.ft_infobox {
+    padding: 10px 20px;
+}
+
+.ft_menu {
+    border-top: 1px solid #eee;
+    margin: 0;
+}
+
+.ft_menu ul {
+    list-style: none;
+}
+
+.ft_menu li {
+    display: inline-block;
+    padding: 10px;
+    font-size: 13px;
+}
+
+.ft_menu a {
+    color: #ff9100;
+}
+
+.ft_custom_txt {
+    padding: 10px;
+    margin: 10px 20px;
+    font-size: 12px;
+}
+
+/*-------------------- bottom bar --------------------*/
+.esobottombar.h_on {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 56px;
+    margin: 0;
+    background: #fff;
+    z-index: 0;
+    align-items: center;
+}
+
+.bottombartable {
+    position: relative;
+    width: 100%;
+    height: 56px;
+    bottom: 0;
+    opacity: 1;
+    transition: opacity 0.5s cubic-bezier(0.1, 1, 0.6, 1), bottom 2s cubic-bezier(0, 1, 0.5, 1);
+}
+
+.bottombarline {
+    height: 1px;
+    opacity: 0.1;
+    background-color: #000000;
+}
+
+.bottombarlist {
+    width: 100%;
+    height: 55px;
+    padding: 0;
+    margin: 0;
+}
+
+.bottombar {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 19%;
+    height: 100%;
+}
+
+.bottombar div a {
+    color: rgb(82, 73, 73);
+}

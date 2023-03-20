@@ -1,0 +1,80 @@
+body {
+    margin: 0;
+    font-family: 'Sunflower', sans-serif;
+    /* 폰트 설정 */
+    overflow-x: hidden;
+    /* x축 스크롤 불가 */
+    overflow-y: scroll;
+    /* y축 화면 넘어가면 스크롤 */
+}
+
+
+/* 스크롤 두께 설정 */
+body::-webkit-scrollbar {
+    width: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 9999;
+}
+
+.header_box {
+    padding: 0 20px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header_box ul {
+    padding: 0;
+}
+
+.header_box a {
+    text-decoration: none;
+    color: #000;
+}
+
+.header_box li {
+    list-style-type: none;
+}
+
+.header_box i {
+    font-size: 20px;
+}
+
+.category_scroll {
+    width: 100%;
+    overflow-y: auto;
+    overflow-y: hidden;
+    border-top: 1px solid #eee;
+}
+
+.category_scroll ul {
+    margin: 10px 0;
+}
+
+.category_scroll li {
+    display: inline-block;
+    padding: 0 10px;
+}
+
+.category_scroll li:hover {
+    background-color: #ffcc8a;
+    border-radius: 4px;
+}
+
+.category_scroll a {
+    color: #4d4c4c;
+    font-weight: 600;
+}

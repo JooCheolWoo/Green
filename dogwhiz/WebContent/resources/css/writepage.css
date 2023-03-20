@@ -1,0 +1,107 @@
+#container {
+    margin-top: 95px;
+    padding: 20px 20px;
+}
+
+div {
+  display: block;
+}
+
+label {
+  font-weight: bold;
+  width: 80px;
+}
+
+select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath d='M201.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 338.7 54.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z'/%3E%3C/svg%3E") no-repeat;
+	background-size: 15px;
+	background-position: right 10px center;  
+	width: 150px;
+	padding: 0.5em;
+	margin-bottom: 1em;
+	border-radius: 0.5em;
+	border: none;
+	box-shadow: rgba(0, 0, 0, 0.2) 0 2px 8px 0;
+	resize: none;
+}
+
+input[type=text] {
+	width: 82%;
+	padding: 0.5em;
+	margin-bottom: 1em;
+	border-radius: 0.5em;
+	border: none;
+	box-shadow: rgba(0, 0, 0, 0.2) 0 2px 8px 0;
+	resize: none;
+}
+
+
+textarea {
+  width: 100%;
+  padding: 0.5em;
+  margin-bottom: 1em;
+  border-radius: 0.5em;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 2px 8px 0;
+  resize: none;
+}
+
+button {
+	margin: 0 20px;
+}
+
+button[type=submit] {
+  background-color: #008CBA;
+  color: white;
+  border: none;
+  border-radius: 0.5em;
+  margin-top : 10px;
+  padding: 0.7em 1em;
+  cursor: pointer;
+}
+
+button[type=submit]:hover {
+  background-color: #006E94;
+}
+
+.cancelBtn {
+  background-color: #f7ae4f;
+  color: white;
+  border: none;
+  border-radius: 0.5em;
+  margin-top : 10px;
+  padding: 0.7em 1em;
+  cursor: pointer;
+}
+
+.cancelBtn:hover {
+  background-color: #ff9100;
+}
+
+.ck-editor__editable {
+  min-height: 250px;
+}
+
+.category {
+  display: flex;
+  align-items: baseline;
+}
+
+.title {
+  display: flex;
+  align-items: baseline;
+}
+
+.important {
+	align-items: baseline;
+	padding-left: 30px;
+}
+
+.btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
