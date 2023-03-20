@@ -114,7 +114,7 @@ toolbar: {
 	]
 	}).then(editor => {
 		window.editor = editor;
-		console.log('Editor was initialized');
+		console.log('Editor was initialized 되었어');
 	}).catch(error => {
 		console.error(error);
 });
@@ -182,15 +182,23 @@ function submitForm() {
 
 const categorySelect = document.getElementById('category');
 const importantDiv = document.querySelector('.important');
+const subCategoryDiv = document.querySelector('.subCategory');
 
-function toggleImportantCheckbox() {
+function chageList() {
+    console.log('호출');
     if (categorySelect.value === '공지') {
         importantDiv.style.display = 'block';
-    } else {
+        subCategoryDiv.style.display = 'none';
+    } else if (categorySelect.value == '커뮤니티') {
+        subCategoryDiv.style.display = 'block';
         importantDiv.style.display = 'none';
-    }
+    } else {
+        subCategoryDiv.style.display = 'none';
+        importantDiv.style.display = 'none';
+    }    
 }
 
-// call the function on page load and whenever the category is changed
-toggleImportantCheckbox();
-categorySelect.addEventListener('change', toggleImportantCheckbox);
+// 페이지 로드 및 카테고리 변경시 함수 호출
+chageList();
+categorySelect.addEventListener('change', chageList);
+

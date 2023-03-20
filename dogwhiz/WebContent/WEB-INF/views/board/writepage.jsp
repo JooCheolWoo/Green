@@ -33,10 +33,7 @@
                     <label for="category">말머리</label>
                     <select name="category" id="category">
                         <option value="공지">공지</option>
-                        <option value="일상">일상</option>
-                        <option value="소식">소식</option>
-                        <option value="자유">자랑</option>
-                        <option value="질문">질문</option>
+                        <option value="커뮤니티">커뮤니티</option>
                         <option value="개과사전">개과사전</option>
                         <option value="이벤트">이벤트</option>
                         <option value="피드백">피드백</option>
@@ -44,7 +41,15 @@
 				    <div class="important" style="display: none;">
 				        <input type="checkbox" id="important-checkbox" name="important" value="true">
 				        <label for="important-checkbox">필독</label>
-				    </div>                  
+				    </div>         
+	                <div class="subCategory" style="display: none;">
+	                    <select name="subCategory" id="subCategory">
+	                        <option value="일상">일상</option>
+	                        <option value="소식">소식</option>
+	                        <option value="자랑">자랑</option>
+	                        <option value="질문">질문</option>
+	                    </select>
+	                </div>				             
                 </div>
                 <div class="title">
                     <label for="title">제목</label>

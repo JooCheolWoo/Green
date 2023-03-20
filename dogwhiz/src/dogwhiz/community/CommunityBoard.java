@@ -11,6 +11,10 @@ public class CommunityBoard extends Board {
 		this.subCategory = subCategory;
 	}
 
+	public CommunityBoard() {
+		this.category = "커뮤니티";
+	}
+
 	public String getSubCategory() {
 		return subCategory;
 	}
