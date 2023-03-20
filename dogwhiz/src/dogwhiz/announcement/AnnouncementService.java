@@ -19,6 +19,11 @@ public class AnnouncementService {
 	}
 	
 	@Transactional(readOnly = true)
+	public List<AnnouncementBoard> getMainAnnouncementDesc() {
+		return repo.getMainAnnouncementDesc();
+	}
+	
+	@Transactional(readOnly = true)
 	public AnnouncementBoard getAnnouncementwithNo(int no) {
 		return repo.getAnnouncementwithNo(no);
 	}

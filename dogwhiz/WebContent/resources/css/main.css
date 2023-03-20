@@ -288,3 +288,7 @@ a {
     background-color: #ffcc8a;
     border-radius: 4px;
 }
+
+.special {
+	background-color: rgba(255, 0, 0, 0.3);
+}

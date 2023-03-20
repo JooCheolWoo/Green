@@ -146,4 +146,10 @@ public class AnnouncementRepoImpl implements AnnouncementRepository {
         String query = "UPDATE announcement SET like_count = like_count + 1 WHERE no = ?";
         return jdbcTemplate.update(query, no);
     }
+
+	@Override
+	public List<AnnouncementBoard> getMainAnnouncementDesc() {
+		String query = "SELECT * FROM announcement ORDER BY no DESC	LIMIT 3";
+		return jdbcTemplate.query(query, new BeanPropertyRowMapper<AnnouncementBoard>(AnnouncementBoard.class));
+	}
 }

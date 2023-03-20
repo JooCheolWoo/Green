@@ -7,6 +7,7 @@ import dogwhiz.model.Board;
 public interface AnnouncementRepository {
 	
 	public List<AnnouncementBoard> getAllAnnouncementDesc(); // 전체 게시글 내림차순 가져오기
+	public List<AnnouncementBoard> getMainAnnouncementDesc(); // 전체 게시글 내림차순 가져오기 3개만
 	
 	public AnnouncementBoard getAnnouncementwithNo(int no); // no로 검색하여 가져오기
 	public List<AnnouncementBoard> getAnnouncementWithTitle(String title); // title로 검색하여 가져오기

@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="ftm" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>    
 <!DOCTYPE html>
 <html>
 
@@ -126,26 +129,24 @@
                         <sapn>공지사항</span>
                     </div>
                     <div class="announcement_list">
-                        <ul>
-                            <a href="#">
-                                <li>
-                                    <em>23-01-01</em>
-                                    <span>회원가입 후 필독사항</span>
-                                </li>
-                            </a>
-                            <a href="#">
-                                <li>
-                                    <em>23-02-01</em>
-                                    <span>댕댕이 페스티벌</span>
-                                </li>
-                            </a>
-                            <a href="#">
-                                <li>
-                                    <em>23-03-01</em>
-                                    <span>이벤트 당첨자 공지</span>
-                                </li>
-                            </a>
-                        </ul>
+                    	<ul>
+						<c:forEach items="${annoucement}" var="annoucement">
+							<li>
+								<span class="special">${annoucement.important ? '[필독]' : ''}</span>
+								<span>[${annoucement.category}]</span>
+								<span>
+									<c:choose>
+						                <c:when test="${fn:length(annoucement.title) > 15}">
+						                    <a href="/dogwhiz/announcementview?no=${annoucement.no}">${fn:substring(annoucement.title, 0, 15)}...</a>
+						                </c:when>
+						                <c:otherwise>
+						                    <a href="/dogwhiz/announcementview?no=${annoucement.no}">${annoucement.title}</a>
+						                </c:otherwise>
+					            	</c:choose>
+								</span>
+							</li>
+						</c:forEach>
+						</ul>
                     </div>
                 </div>
                 <div class="main_walkrank">
