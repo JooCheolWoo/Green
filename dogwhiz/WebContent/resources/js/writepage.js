@@ -128,7 +128,7 @@ const subCategoryCommunitySelect = document.getElementById("subCategoryCommunity
 const subCategoryDictionarySelect = document.getElementById("subCategoryDictionary");
 
 function handleCategoryChange() {
-  if (categorySelect.value === "공지") {
+  if (categorySelect.value === "공지사항") {
     importantDiv.style.display = "block";
     subCategoryCommunityDiv.style.display = "none";
     subCategoryDictionaryDiv.style.display = "none";

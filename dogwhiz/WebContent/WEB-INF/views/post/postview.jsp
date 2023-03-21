@@ -38,7 +38,7 @@
                         <a href="javascript:history.back()" title="이전"><i class="fa-solid fa-chevron-left"></i></a>
                     </div>
                     <h2>
-                        	${post.category}
+                       	<a href="post?category=${post.category}">${post.category}</a>
                     </h2>
                     <div class="sub_top_right">
                         <a href="writepage">글쓰기</a>
@@ -47,7 +47,7 @@
 
 				<div class="board_list">
 					<div id="content">
-						<h2>${post.important ? '[필독] ' : ''} [${post.category}] ${post.title}</h2>
+						<h2>${post.important ? '[필독] ' : ''} [${post.category}] ${post.subCategory != null ? [post.subCategory] : ''} ${post.title}</h2>
 						<p>글쓴이: ${post.writer} | 작성날짜: ${post.createdAt.toLocalDate()} ${post.createdAt.toLocalTime()} | 조회수: ${post.viewCount + 1} | 추천수: 0</p>
 						<hr>
 						<p>${post.content}</p>

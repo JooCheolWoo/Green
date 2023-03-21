@@ -19,7 +19,7 @@
     <script src="https://kit.fontawesome.com/8382ce3f5f.js" crossorigin="anonymous"></script>
 
     <!-- stylesheets -->
-    <link rel="stylesheet" href="./css/announcement.css?after">
+    <link rel="stylesheet" href="./css/postlist.css?after">
 
 </head>
 
