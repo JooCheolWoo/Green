@@ -6,7 +6,9 @@ import dogwhiz.model.Post;
 
 public interface PostRepository {
 	public List<Post> getAllPost(); // 전체 게시글 목록 불러오기(내림차순)
+	public List<Post> getBestPost(String category, int limit); // 커뮤니티에서 인기글 불러오기
 	public List<Post> getPostByCategory(String category); // 카테고리 검색
+	public List<Post> getPostByCategoryWithLimit(String category, int limit); // 카테고리 검색, 가져올 글 갯수
 	public List<Post> getPostBySubCategory(String category, String subCategory); // 상세 카테고리 검색
 	public List<Post> getPostByTitle(String title); // 제목 검색
 	public List<Post> getPostByWriter(String writer); // 작성자 검색

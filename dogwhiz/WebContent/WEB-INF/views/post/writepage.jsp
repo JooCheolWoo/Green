@@ -33,6 +33,7 @@
                     <label for="category">말머리</label>
                     <select name="category" id="category">
                         <option value="공지사항">공지</option>
+                        <option value="산책커뮤니티">산책</option>
                         <option value="커뮤니티">커뮤니티</option>
                         <option value="개과사전">개과사전</option>
                         <option value="이벤트">이벤트</option>

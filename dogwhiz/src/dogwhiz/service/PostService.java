@@ -22,8 +22,18 @@ public class PostService {
 	}
 	
 	@Transactional(readOnly = true)
+	public List<Post> getBestPost(String category, int limit) {
+		return repo.getBestPost(category, limit);
+	}
+	
+	@Transactional(readOnly = true)
 	public List<Post> getPostByCategory(String category) {
 		return repo.getPostByCategory(category);
+	}
+	
+	@Transactional(readOnly = true)
+	public List<Post> getPostByCategoryWithLimit(String category, int limit) {
+		return repo.getPostByCategoryWithLimit(category, limit);
 	}
 	
 	@Transactional(readOnly = true)

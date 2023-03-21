@@ -44,7 +44,7 @@
                             <div class="nav">
                                 <label for="img-6" class="prev">&#x2039;</label>
                                 <label for="img-2" class="next">&#x203a;</label>
-                            </div>
+                            </div>	
                         </li>
 
                         <input type="radio" name="radio-btn" id="img-2" />
@@ -128,27 +128,27 @@
                     <div class="announcement_title">
                         <sapn>공지사항</span>
                     </div>
-                    <div class="announcement_list">
-                    <!--  
+                    <div class="announcement_list"> 
                     	<ul>
-						<c:forEach items="${annoucement}" var="annoucement">
-							<li>
-								<span class="special">${annoucement.important ? '[필독]' : ''}</span>
-								<span>[${annoucement.category}]</span>
-								<span>
-									<c:choose>
-						                <c:when test="${fn:length(annoucement.title) > 15}">
-						                    <a href="/dogwhiz/announcementview?no=${annoucement.no}">${fn:substring(annoucement.title, 0, 15)}...</a>
-						                </c:when>
-						                <c:otherwise>
-						                    <a href="/dogwhiz/announcementview?no=${annoucement.no}">${annoucement.title}</a>
-						                </c:otherwise>
-					            	</c:choose>
-								</span>
-							</li>
-						</c:forEach>
+							<c:forEach items="${announceList}" var="announceList">
+							<a href="/dogwhiz/postview?no=${announceList.no}">
+								<li>
+									<span class="special">${announceList.important ? '[필독]' : ''}</span>
+									<span>[${announceList.category}]</span>
+									<span>
+										<c:choose>
+							                <c:when test="${fn:length(announceList.title) > 20}">
+							                    <span>${fn:substring(announceList.title, 0, 20)}...</span>
+							                </c:when>
+							                <c:otherwise>
+							                    <span>${announceList.title}</span>
+							                </c:otherwise>
+						            	</c:choose>
+									</span>
+								</li>
+								</a>
+							</c:forEach>
 						</ul>
-						-->
                     </div>
                 </div>
                 <div class="main_walkrank">
@@ -157,68 +157,22 @@
                     </div>
                     <div class="walkrank_list">
                         <ul>
-                            <a href="#">
-                                <li>
-                                    <em>1</em>
-                                    <span>부산시민공원</span>
-                                </li>
-                            </a>
-                            <a href="#">
-                                <li>
-                                    <em>2</em>
-                                    <span>삼락생태공원</span>
-                                </li>
-                            </a>
-                            <a href="#">
-                                <li>
-                                    <em>3</em>
-                                    <span>다대포해수욕장</span>
-                                </li>
-                            </a>
-                            <a href="#">
-                                <li>
-                                    <em>4</em>
-                                    <span>사상근린공원</span>
-                                </li>
-                            </a>
-                            <a href="#">
-                                <li>
-                                    <em>5</em>
-                                    <span>구덕운동장</span>
-                                </li>
-                            </a>
-                        </ul>
-                        <ul>
-                            <a href="#">
-                                <li>
-                                    <em>6</em>
-                                    <span>6번 산책길</span>
-                                </li>
-                            </a>
-                            <a href="#">
-                                <li>
-                                    <em>7</em>
-                                    <span>7번 산책길</span>
-                                </li>
-                            </a>
-                            <a href="#">
-                                <li>
-                                    <em>8</em>
-                                    <span>8번 산책길</span>
-                                </li>
-                            </a>
-                            <a href="#">
-                                <li>
-                                    <em>9</em>
-                                    <span>9번 산책길</span>
-                                </li>
-                            </a>
-                            <a href="#">
-                                <li>
-                                    <em>10</em>
-                                    <span>10번 산책길</span>
-                                </li>
-                            </a>
+                        	<c:set var="number" value="0" />
+							<c:forEach items="${walkList}" var="walkList">
+								<a href="/dogwhiz/postview?no=${walkList.no}">
+									<li>
+										<em>${number = number + 1}</em>
+										<c:choose>
+							                <c:when test="${fn:length(walkList.title) > 20}">
+							                    <span>${fn:substring(walkList.title, 0, 20)}...</span>
+							                </c:when>
+							                <c:otherwise>
+							                    <span>${walkList.title}</span>
+							                </c:otherwise>
+						            	</c:choose>
+									</li>
+								</a>
+							</c:forEach>
                         </ul>
                     </div>
                 </div>
@@ -228,36 +182,23 @@
                     </div>
                     <div class="post_list">
                         <ul>
-                            <a href="#">
-                                <li>
-                                    <em>1</em>
-                                    <span>우리집 댕댕이 졸라 귀여워 미쳤음</span>
-                                </li>
-                            </a>
-                            <a href="#">
-                                <li>
-                                    <em>2</em>
-                                    <span>우리집 댕댕이 졸라 귀여워 미쳤음</span>
-                                </li>
-                            </a>
-                            <a href="#">
-                                <li>
-                                    <em>3</em>
-                                    <span>우리집 댕댕이 졸라 귀여워 미쳤음</span>
-                                </li>
-                            </a>
-                            <a href="#">
-                                <li>
-                                    <em>4</em>
-                                    <span>우리집 댕댕이 졸라 귀여워 미쳤음</span>
-                                </li>
-                            </a>
-                            <a href="#">
-                                <li>
-                                    <em>5</em>
-                                    <span>우리집 댕댕이 졸라 귀여워 미쳤음</span>
-                                </li>
-                            </a>
+                        	<c:set var="number" value="0" />
+							<c:forEach items="${communityList}" var="communityList">
+								<a href="/dogwhiz/postview?no=${communityList.no}">
+									<li>
+										<em>${number = number + 1}</em>
+										<span>[${communityList.subCategory}]</span>
+										<c:choose>
+							                <c:when test="${fn:length(communityList.title) > 20}">
+							                    <span>${fn:substring(communityList.title, 0, 20)}...</span>
+							                </c:when>
+							                <c:otherwise>
+							                    <span>${communityList.title}</span>
+							                </c:otherwise>
+						            	</c:choose>
+									</li>
+								</a>
+							</c:forEach>
                         </ul>
                     </div>
                 </div>

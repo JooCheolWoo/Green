@@ -200,4 +200,16 @@ public class PostRepositoryImpl implements PostRepository {
 		return jdbcTemplate.query(query, new Object[]{category, subCategory, start, end} , rowMapper);
 	}
 
+	@Override
+	public List<Post> getPostByCategoryWithLimit(String category, int limit) {
+		String query = "SELECT * FROM post WHERE category = ? ORDER BY created_at DESC LIMIT ?";
+		return jdbcTemplate.query(query, new Object[]{category, limit} , rowMapper);
+	}
+
+	@Override
+	public List<Post> getBestPost(String category, int limit) {
+		String query = "SELECT * FROM post WHERE category = ? ORDER BY view_count DESC LIMIT ?";
+		return jdbcTemplate.query(query, new Object[]{category, limit} , rowMapper);
+	}
+
 }
