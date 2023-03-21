@@ -24,7 +24,7 @@ a {
     border-radius: 4px;
 }
 
-.board_search {
+.post_search {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -41,7 +41,7 @@ a {
     font-weight: bold;
 }
 
-.board_search_btn {
+.post_search_btn {
     width: 80px;
     height: 30px;
 }

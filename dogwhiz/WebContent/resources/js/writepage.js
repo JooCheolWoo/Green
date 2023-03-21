@@ -118,83 +118,51 @@ toolbar: {
 	}).catch(error => {
 		console.error(error);
 });
-	
-
-function submitForm() {
-	let category = document.getElementById("category").value;
-	let form = document.getElementById("post-form");
-	let url;
-	switch (category) {
-	    case "공지":
-	        url = "./announcement/add";
-	        form.setAttribute("modelAttribute", "announcement");
-	        break;
-	    case "커뮤니티":
-	        url = "./community/add";
-	        form.setAttribute("modelAttribute", "community");
-	        break;
-	    case "개과사전":
-	        url = "./dictionary/add";
-	        form.setAttribute("modelAttribute", "dictionary");
-	        break;
-	    case "이벤트":
-	        url = "./event/add";
-	        form.setAttribute("modelAttribute", "event");
-	        break;
-	    case "피드백":
-	        url = "./feedback/add";
-	        form.setAttribute("modelAttribute", "feedback");
-	        break;
-	    default:
-	        break;
-	}
-
-	form.setAttribute("action", url);
-
-  // 에디터의 내용을 textarea 요소에 저장
-  let editorData = window.editor.getData();
-  document.getElementById("content").value = editorData;
-  console.log(document.getElementById("content").value);
-  
-    // base64 인코딩된 이미지 데이터 가져오기
-    let base64Image = document.getElementById("base64Image");
-    console.log(base64Image);
-    // 이미지 데이터가 있으면, content의 value에 추가
-    if (base64Image) {
-        document.getElementById("content").value += "<img src='" + base64Image + "'>";
-    }	  
-  
-  document.getElementById("post-form").submit();
-}
 
 
-const categorySelect = document.getElementById('category');
-const importantDiv = document.querySelector('.important');
-const subCategoryCommunityDiv = document.querySelector('.subCategoryCommunity');
-const subCategoryDictionaryDiv = document.querySelector('.subCategoryDictionary');
+const categorySelect = document.getElementById("category");
+const subCategoryCommunityDiv = document.querySelector(".subCategoryCommunity");
+const subCategoryDictionaryDiv = document.querySelector(".subCategoryDictionary");
+const importantDiv = document.querySelector(".important");
+const subCategoryCommunitySelect = document.getElementById("subCategoryCommunity");
+const subCategoryDictionarySelect = document.getElementById("subCategoryDictionary");
 
-function chageList() {
-    if (categorySelect.value === '공지') {
-        importantDiv.style.display = 'block';
-        subCategoryCommunityDiv.style.display = 'none';
-        subCategoryDictionaryDiv.style.disply = 'none';
-    } else if (categorySelect.value == '커뮤니티') {
-        subCategoryCommunityDiv.style.display = 'block';
-        importantDiv.style.display = 'none';
-        subCategoryDictionaryDiv.style.disply = 'none';
-    } else if (categorySelect.value == '개과사전') {
-    	subCategoryDictionaryDiv.style.display = 'block';
-        subCategoryCommunityDiv.style.display = 'none';
-        importantDiv.style.display = 'none';  
-        console.log('제발');  	
+function handleCategoryChange() {
+  if (categorySelect.value === "공지") {
+    importantDiv.style.display = "block";
+    subCategoryCommunityDiv.style.display = "none";
+    subCategoryDictionaryDiv.style.display = "none";
+    subCategoryCommunitySelect.removeAttribute("subCategory");
+    subCategoryDictionarySelect.removeAttribute("subCategory");
+  } else {
+    importantDiv.style.display = "none";
+    if (categorySelect.value === "커뮤니티") {
+      subCategoryCommunityDiv.style.display = "block";
+      subCategoryDictionaryDiv.style.display = "none";
+      subCategoryCommunitySelect.setAttribute("name", "subCategory");
+      subCategoryDictionarySelect.removeAttribute("name");
+    } else if (categorySelect.value === "개과사전") {
+      subCategoryCommunityDiv.style.display = "none";
+      subCategoryDictionaryDiv.style.display = "block";
+      subCategoryCommunitySelect.removeAttribute("name");
+      subCategoryDictionarySelect.setAttribute("name", "subCategory");
     } else {
-        subCategoryCommunityDiv.style.display = 'none';
-        importantDiv.style.display = 'none';
-        subCategoryDictionaryDiv.style.disply = 'none';
-    }    
+      subCategoryCommunityDiv.style.display = "none";
+      subCategoryDictionaryDiv.style.display = "none";
+      subCategoryCommunitySelect.removeAttribute("name");
+      subCategoryDictionarySelect.removeAttribute("name");
+    }
+  }
 }
 
-// 페이지 로드 및 카테고리 변경시 함수 호출
-chageList();
-categorySelect.addEventListener('change', chageList);
+
+
+window.addEventListener("load", function() {
+  handleCategoryChange();
+
+  categorySelect.addEventListener("change", handleCategoryChange);
+
+});
+
+
 

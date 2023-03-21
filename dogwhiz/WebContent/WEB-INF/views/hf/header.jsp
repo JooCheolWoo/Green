@@ -37,12 +37,12 @@
 	         </ul>
 	         <div class="category_scroll">
 	             <ul>
-	                 <li><a href="announcement">공지사항</a></li>
-	                 <li><a href="#" class="map_diary">산책커뮤니티</a></li>
-	                 <li><a href="community">커뮤니티</a>
-	                 <li><a href="dictionary">개과사전</a></li>
-	                 <li><a href="#">이벤트</a></li>
-	                 <li><a href="#">피드백</a></li>
+	                 <li><a href="post?category=공지사항">공지사항</a></li>
+	                 <li><a href="post?category=산책커뮤니티">산책커뮤니티</a></li>
+	                 <li><a href="post?category=커뮤니티">커뮤니티</a></li>
+	                 <li><a href="post?category=개과사전">개과사전</a></li>
+	                 <li><a href="post?category=이벤트">이벤트</a></li>
+	                 <li><a href="post?category=피드백">피드백</a></li>
 	             </ul>
 	         </div>
 	     </div>

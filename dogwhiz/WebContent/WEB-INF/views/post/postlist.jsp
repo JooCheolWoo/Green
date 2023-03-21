@@ -8,7 +8,7 @@
 
 <head>
     <meta charset='utf-8'>
-    <title>커뮤니티</title>
+    <title>공지사항</title>
 
     <!-- 폰트 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,60 +33,61 @@
                         <a href="javascript:history.back()" title="이전"><i class="fa-solid fa-chevron-left"></i></a>
                     </div>
                     <h2>
-                        <a href="community">커뮤니티</a>
+                        <a href="post?category=${category}">${category}</a>
                     </h2>
                     <div class="sub_top_right">
                         <a href="writepage">글쓰기</a>
                     </div>
                 </div>
-                <div class="board_search">
+                <div class="post_search">
                     <div class="search_input">
-                        <input type="search" name="searchWord" value placeholder="검색 단어를 입력해 주세요.">
+                        <input type="search" class="post_search_txt" value placeholder="검색 단어를 입력해 주세요.">
                     </div>
                     <div class="search_btn">
-                        <button type="submit" class="board_search_btn">검 색</button>
+                        <button type="button" class="post_search_btn">검 색</button>
                     </div>
                 </div>
 				 <div class="board_list">
 					<c:set var="now" value="<%=java.time.LocalDateTime.now()%>" />
-					<c:forEach items="${community}" var="community" begin="${(page) * 10}" end="${(page) * 10 + 9}">
+					<c:forEach items="${post}" var="post" begin="${(page) * 10}" end="${(page) * 10 + 9}">
 						<div class="post_div">
 							<div class="post_left">
 								<div class="post_top">
-									<span>[${community.subCategoryC}]</span>
+									<span class="special">${post.important ? '[필독]' : ''}</span>
+									<span>[${post.subCategory == null ? post.category : post.subCategory}]</span>
 									<span>
 										<c:choose>
-							                <c:when test="${fn:length(community.title) > 15}">
-							                    <a href="/dogwhiz/communityview?no=${community.no}">${fn:substring(community.title, 0, 15)}...</a>
+							                <c:when test="${fn:length(post.title) > 15}">
+							                    <a href="/dogwhiz/postview?no=${post.no}">${fn:substring(post.title, 0, 15)}...</a>
 							                </c:when>
 							                <c:otherwise>
-							                    <a href="/dogwhiz/communityview?no=${community.no}">${community.title}</a>
+							                    <a href="/dogwhiz/postview?no=${post.no}">${post.title}</a>
 							                </c:otherwise>
 						            	</c:choose>
 									</span>
 								</div>
 								<div class="post_middle">
-									<span class="nickname">${community.writer}</span>
+									<span class="nickname">${post.writer}</span>
 									<span>
 						            <c:choose>
-						                <c:when test="${community.createdAt.toLocalDate() == now.toLocalDate()}">
-						                    <span class="createdAt" style="font-size: 14px">${community.createdAt.toLocalTime()}</span>
+						                <c:when test="${post.createdAt.toLocalDate() == now.toLocalDate()}">
+						                    <span class="createdAt" style="font-size: 14px">${post.createdAt.toLocalTime()}</span>
 						                </c:when>
 						                <c:otherwise>
-						                    <span class="createdAt" style="font-size: 14px">${community.createdAt.toLocalDate()} ${community.createdAt.toLocalTime()}</span>
+						                    <span class="createdAt" style="font-size: 14px">${post.createdAt.toLocalDate()} ${post.createdAt.toLocalTime()}</span>
 						                </c:otherwise>
 						            </c:choose>										
 									</span>
 								</div>
 								<div class="post_bottom">
-									<i class="fa-regular fa-heart"></i> <span>${community.likeCount}</span>
-									<i class="fa-regular fa-comment-dots"></i> <span>${community.likeCount}</span>
-									<i class="fa-regular fa-eye"></i> <span>${community.viewCount}</span>									
+									<i class="fa-regular fa-heart"></i> <span>0</span>
+									<i class="fa-regular fa-comment-dots"></i> <span>0</span>
+									<i class="fa-regular fa-eye"></i> <span>${post.viewCount}</span>									
 								</div>
 							</div>
 							<div class="post_image">
-								<c:if test="${fn:contains(community.content, '<img')}">
-								  <c:set var="firstImage" value="${fn:substringAfter(community.content, '<img')}"/>
+								<c:if test="${fn:contains(post.content, '<img')}">
+								  <c:set var="firstImage" value="${fn:substringAfter(post.content, '<img')}"/>
 								  <c:set var="firstImage" value="${fn:substringBefore(firstImage, '>')}"/>
 								  <img ${firstImage}>
 								</c:if>			
