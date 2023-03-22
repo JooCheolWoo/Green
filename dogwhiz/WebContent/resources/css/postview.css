@@ -1,1 +1,34 @@
+#container {
+    margin-top: 95px;
+}
+
+.body {
+	background-color: #fff;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.sub_top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.sub_top_right {
+    padding: 3px;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+.board_list {
+    padding: 20px;
+    margin: 0 auto;
+    font-size: 14px;
+    color: #333;
+}
+
 div#content img { max-width: 100%; height: auto; };
